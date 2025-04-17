@@ -1,0 +1,244 @@
+public class soal2 {
+        public static void main(String[] args) {
+        /*
+          SOAL
+          Buatlah class untuk membuat object geometri: segitiga, persegi panjang,
+          persegi, lingkaran, jajargenjang, trapesium, belah ketupat dan layang
+          layang. Setiap class harus dilengkapi dengan method untuk men-set nilai
+          variabel variabel yang ada di dalam class. selain itu setiap class juga
+          harus memiliki method hitungLuas( ), hitungKeliling( ), dan printState( )
+          untuk menampilkan nilai variabel-variabel terkini.*/
+
+
+            final int h = 2;
+            Segitiga s = new Segitiga();
+            s.setNilai(5, 10, 15, 15, 5);
+            System.out.println(s.hitungLuas());
+            s.printState();
+        }
+    }
+
+    // A. SEGITIGA
+    class Segitiga {
+        private double alas, tinggi, sisi1, sisi2, sisi3;
+
+        public void setNilai(double alas, double tinggi, double sisi1, double sisi2, double sisi3) {
+            this.alas = alas;
+            this.tinggi = tinggi;
+            this.sisi1 = sisi1;
+            this.sisi2 = sisi2;
+            this.sisi3 = sisi3;
+        }
+
+        public double hitungLuas() {
+            return 0.5 * (alas * tinggi);
+        }
+
+        double hitungKeliling() {
+            return sisi1 * sisi2 * sisi3;
+        }
+
+        void printState() {
+            System.out.println("Segitiga");
+            System.out.printf(
+                    "alas : %.2f\ntinggi : %.2f\nsisi1 : %.2f\nsisi2 : %.2f\nsisi3 : %.2f\nluas : %.2f\nkeliling : %.2f\n",
+                    alas, tinggi, sisi1, sisi2, sisi3, hitungLuas(), hitungKeliling());
+        }
+
+    }
+
+
+    // B. Persegi Panjang
+    class PersegiPanjang {
+        private double panjang, lebar;
+
+        public void setNilai(double panjang, double lebar) {
+            this.panjang = panjang;
+            this.lebar = lebar;
+        }
+
+        public double hitungLuas() {
+            return panjang * lebar;
+        }
+
+        double hitungKeliling() {
+            return 2 * (panjang + lebar);
+        }
+
+        void printState() {
+            System.out.println("Persegi Panjang");
+            System.out.printf(
+                    "panjang : %.2f\nlebar : %.2f\nluas : %.2f\nkeliling : %.2f\n",
+                    panjang, lebar, hitungLuas(), hitungKeliling());
+        }
+    }
+
+
+    // C. Persegi
+    class Persegi {
+        private double sisi;
+
+        public void setNilai(double sisi) {
+            this.sisi = sisi;
+        }
+
+        public double hitungLuas() {
+            return sisi * sisi;
+        }
+
+        double hitungKeliling() {
+            return 4 * sisi;
+        }
+
+        void printState() {
+            System.out.println("Persegi");
+            System.out.printf(
+                    "sisi : %.2f\nluas : %.2f\nkeliling : %.2f\n",
+                    sisi, hitungLuas(), hitungKeliling());
+        }
+    }
+
+
+    // D. Lingkaran
+    class Lingkaran {
+        private double jariJari;
+
+        public void setNilai(double jariJari) {
+            this.jariJari = jariJari;
+        }
+
+        public double hitungLuas() {
+            return Math.PI * jariJari * jariJari;
+        }
+
+        double hitungKeliling() {
+            return 2 * Math.PI * jariJari;
+        }
+
+        void printState() {
+            System.out.println("Lingkaran");
+            System.out.printf(
+                    "jariJari : %.2f\nluas : %.2f\nkeliling : %.2f\n",
+                    jariJari, hitungLuas(), hitungKeliling());
+        }
+    }
+
+
+    // E.JAJARGENJANG
+    class JajarGenjang {
+        private double alas, tinggi, sisiMiring;
+
+
+        public void setNilai(double alas, double tinggi, double sisiMiring) {
+            this.alas = alas;
+            this.tinggi = tinggi;
+            this.sisiMiring = sisiMiring;
+        }
+
+        public double hitungLuas() {
+            return alas * tinggi;
+        }
+
+        double hitungKeliling() {
+            return 2 * (alas + sisiMiring);
+        }
+
+        void printState() {
+            System.out.println("JajarGenjang");
+            System.out.printf(
+                    "jariJari : %.2f\nluas : %.2f\nkeliling : %.2f\n", hitungLuas(), hitungKeliling());
+        }
+    }
+
+
+    // F.TRAPESIUM
+    class Trapesium{
+        double sisiAtas, sisiBawah, tinggi, sisiMiringKiri, sisiMiringKanan;
+
+        void setNilai(double sisiAtas, double sisiBawah, double tinggi, double sisiMiringKiri, double sisiMiringKanan) {
+            this.sisiAtas = sisiAtas;
+            this.sisiBawah = sisiBawah;
+            this.tinggi = tinggi;
+            this.sisiMiringKiri = sisiMiringKiri;
+            this.sisiMiringKanan = sisiMiringKanan;
+        }
+
+        double hitungLuas() {
+            return 0.5 * (sisiAtas + sisiBawah) * tinggi;
+        }
+
+        double hitungKeliling() {
+            return sisiAtas + sisiBawah + sisiMiringKiri + sisiMiringKanan;
+        }
+
+        void printState() {
+            System.out.println("Trapesium");
+            System.out.printf("Sisi Atas : %.2f\n",sisiAtas);
+            System.out.printf("Sisi Bawah : %.2f\n",sisiBawah);
+            System.out.printf("Tinggi : %.2f\n",tinggi);
+            System.out.printf("Sisi Miring Kiri : %.2f\n",sisiMiringKiri);
+            System.out.printf("Sisi Miring Kanan : %.2f\n",sisiMiringKanan);
+            System.out.printf("Luas : %.2f\n",hitungLuas());
+            System.out.printf("Keliling : %.2f\n",hitungKeliling());
+        }
+    }
+
+    // G. BELAH KETUPAT
+    class BelahKetupat {
+        double diagonal1, diagonal2, sisi;
+
+        void setBelahKetupat(double diagonal1, double diagonal2, double sisi) {
+            this.diagonal1 = diagonal1;
+            this.diagonal2 = diagonal2;
+            this.sisi = sisi;
+        }
+
+        double hitungLuas() {
+            return 0.5 * diagonal1 * diagonal2;
+        }
+
+        double hitungKeliling() {
+            return 4 * sisi;
+        }
+
+        void printState() {
+            System.out.println("Belah Ketupat");
+            System.out.printf("Diagonal 1 : %.2f\n",diagonal1);
+            System.out.printf("Diagonal 2 : %.2f\n",diagonal2);
+            System.out.printf("Sisi : %.2f\n",sisi);
+            System.out.printf("Luas : %.2f\n",hitungLuas());
+            System.out.printf("Keliling : %.2f\n",hitungKeliling());
+        }
+    }
+
+
+    // F. LAYANG-LAYANG
+    class LayangLayang {
+        double diagonal1, diagonal2, sisiA, sisiB;
+
+        void setLayangLayang(double diagonal1, double diagonal2, double sisiA, double sisiB) {
+            this.diagonal1 = diagonal1;
+            this.diagonal2 = diagonal2;
+            this.sisiA = sisiA;
+            this.sisiB = sisiB;
+        }
+
+        double hitungLuas() {
+            return 0.5 * diagonal1 * diagonal2;
+        }
+
+        double hitungKeliling() {
+            return 2 * (sisiA + sisiB);
+        }
+
+        void printState() {
+            System.out.println("Layang Layang");
+            System.out.printf("Diagonal 1 : %.2f\n",diagonal1);
+            System.out.printf("Diagonal 2 : %.2f\n",diagonal2);
+            System.out.printf("Sisi A : %.2f\n",sisiA);
+            System.out.printf("Sisi B : %.2f\n",sisiB);
+            System.out.printf("Luas : %.2f\n",hitungLuas());
+            System.out.printf("Keliling : %.2f\n",hitungKeliling());
+        }
+    }
+
