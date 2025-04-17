@@ -1,0 +1,54 @@
+public class Soal_1 {
+    public static void main(String[] args) {
+
+
+       // 1. Mobil : Toyota Avanza
+        Mobil toyotaAvanza = new Mobil("Toyota Avanza", "Hitam");
+        toyotaAvanza.gas();
+        toyotaAvanza.ngerem();
+        toyotaAvanza.berhenti();
+
+        // 2. Laptop :  Lenovo ThinkPad X1 Carbon
+        Laptop lenovoThinkPadX1Carbon = new Laptop("Lenovo ThinkPad X1 Carbon", 16);
+        lenovoThinkPadX1Carbon.menyalakan();
+        lenovoThinkPadX1Carbon.bukaApp("Vs Code");
+        lenovoThinkPadX1Carbon.mematikan();
+
+        // 3. Buku : Perahu Kertas
+        Buku perahuKertas = new Buku("Perahu Kertas", "Dee Lestari", 444);
+        perahuKertas.bukaHalaman(23);
+        perahuKertas.baca();
+        perahuKertas.tutupBuku();
+
+        // 4. Hewan : Kucing
+        Hewan kucing = new Hewan("Kucing", "Meong");
+        kucing.makan();
+        kucing.bersuara();
+        kucing.tidur();
+
+        // 6. Game : Mobile Legends: Bang Bang
+        Game mlbb = new Game("Mobile Legends: Bang Bang", 4.1);
+        mlbb.memulaiGame();
+        mlbb.keluarGame();
+
+        // 7. Pegawai : Andi
+        Pegawai webDeveloper = new Pegawai("Andi", "Web Developer");
+        webDeveloper.kerja();
+        webDeveloper.TerimaGaji(8_500_000);
+
+        // 8. Film : Dilan 1990
+        Film dilan1990 = new Film("Dilan 1990", "Romantis, Drama", 110);
+        dilan1990.putar();
+        dilan1990.berhenti();
+
+        // 9. Akun : Instagram
+        Akun ig = new Akun("Instagram", "andipratama23", "Insta2023!");
+        ig.login("Insta2023!");
+        ig.UbahPassword("Insta2025!");
+        ig.logout();
+
+        // 10. Tempat : Makassar
+        Tempat makassar = new Tempat("Makassar", 175.8, 1.5);
+        makassar.tampilkanInfo();
+    }
+}
